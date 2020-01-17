@@ -17,7 +17,7 @@ to tackle that issue through the use of New-UDPivot an interactive dynamic pivot
 ## The Data Parameter Has To Be A HashTable
 
 So the trick with passing the data to this component is it has to be in a hashtable format. This component works wonders
-displaying SQL data, but for this example I will show how to but the output of **get-process** into a hashtable
+displaying SQL data, but for this example I will show how to put the output of **get-process** into a hashtable
 
 ```
  $Processes = Get-Process | sort-object CPU -Descending | Name, CPU, WorkingSet, VirtualMemorySize, StartTime

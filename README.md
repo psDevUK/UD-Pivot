@@ -10,6 +10,32 @@ steps involved to put that into a pivot table within excel. Just so they can hav
 many rows to digest. Well you know they are not going to remember, or simply carry on asking you. So this is how I plan
 to tackle that issue through the use of New-UDPivot an interactive dynamic pivot table/graph component.
 
+## Parameters
+
+* **-Data** This is the only parameter in this component this is a mandatory paramater, as without this being supplied there will be no data to display
+
+## The Data Parameter Has To Be A HashTable
+
+So the trick with passing the data to this component is it has to be in a hashtable format. This component works wonders
+displaying SQL data, but for this example I will show how to but the output of **get-process** into a hashtable
+
+```
+ $Processes = Get-Process | sort-object CPU -Descending | Name, CPU, WorkingSet, VirtualMemorySize, StartTime
+                $DataHash = @()
+                foreach ($item in $Processes) {
+                    $DataHash += @{
+                        Name              = $item.Name
+                        CPU               = $item.CPU
+                        WorkingSet        = $item.WorkingSet
+                        VirtualMemorySize = $item.VirtualMemorySize
+                        StartTime         = $item.StartTime
+                    }
+                }
+```
+Now the variable **$DataHash** can be passed to the component like so
+**New-UDPivot -Data {$DataHash}**
+Literally that's is all there is to passing the data to this component
+
 ## Demo Of The Component
 
 ```
@@ -43,4 +69,5 @@ Start-UDDashboard -Port 1000 -AutoReload -Dashboard (
 )
 ```
 
+Then simply drag and drop for how you wish your data to be displayed.
 

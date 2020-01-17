@@ -71,3 +71,4 @@ Start-UDDashboard -Port 1000 -AutoReload -Dashboard (
 
 Then simply drag and drop for how you wish your data to be displayed.
 
+![placeholder](https://github.com/psDevUK/UD-Pivot/blob/master/pivot3.gif "Example")

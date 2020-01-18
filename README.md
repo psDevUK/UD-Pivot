@@ -1,6 +1,10 @@
 # UD-Pivot
 A powershell version of https://github.com/plotly/react-pivottable
 
+## Please Note
+
+The version on the powershell gallery I called **New-UDPivotTable** the exact same rules apply apart from the function name.
+
 ## My Reason For This Component
 
 At my work I always seem to find that I have to put the raw data into a prettier format.  Obviously UniversalDashboard 
